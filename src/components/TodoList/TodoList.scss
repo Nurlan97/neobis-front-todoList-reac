@@ -1,0 +1,76 @@
+.todoList {
+
+    &__title {
+        margin-top: 40px;
+        font-weight: 400;
+    }
+
+    &__tasks_list {
+
+        &>li{
+                background: #ffffff;
+                width: 100%;
+                padding: 20px;
+                display: flex;
+                justify-content: space-between;
+                border-radius: 28px;
+                margin: 20px 0;
+    
+                .taskName-container {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    width: 46%;
+    
+                    .category {
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        position: relative;
+    
+                        div {
+                            width: 22px;
+                            height: 22px;
+                            border-radius: 50%;
+                            cursor: pointer;
+                            position: absolute;
+                            top: 2px;
+                            left: 2px;
+                        }
+                    }
+    
+    
+                }
+    
+                .action-btns {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+    
+                    .editBtn {
+                        padding: 10px;
+                        font-size: 15px;
+                        border-radius: 5px;
+                        background: rgba(216, 48, 146, 255);
+                        color: #ffffff;
+                        border: none;
+                        cursor: pointer;
+                    }
+    
+                    .deleteBtn {
+                        padding: 10px;
+                        font-size: 15px;
+                        border-radius: 5px;
+                        background: rgba(229, 72, 68, 255);
+                        color: #ffffff;
+                        border: none;
+                        cursor: pointer;
+                    }
+                }
+    
+    
+    
+        }
+    }
+}

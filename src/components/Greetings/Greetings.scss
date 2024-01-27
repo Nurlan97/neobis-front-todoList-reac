@@ -1,0 +1,23 @@
+.greetings {
+    display: flex;
+    align-items: center;
+
+    &__title {
+        color: #000000;
+        font-size: 50px;
+        font-weight: 700;
+    }
+
+    &__input {
+        padding: 10px 20px;
+        font-size: 50px;
+        font-weight: 700;
+        border: none;
+        background: rgba(237, 236, 237, 255);
+        max-width: 450px;
+
+        &:focus {
+            outline: none;
+          }
+    }
+}

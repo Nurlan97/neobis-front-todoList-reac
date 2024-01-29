@@ -11,13 +11,16 @@ function App() {
   const [tasks_list, setTasks_list] = useState([]);
   const [businessActive, setBusinessActive] = useState(false);
   const [personalActive, setPersonalActive] = useState(false);
-
+  const [category, setCategory] = useState('')
+  
   const addTask = task => {
     setTasks_list([...tasks_list, {
       id: uuidv4(),
       task,
+      category,
       completed: false,
-      isEditing: false
+      isEditing: false,
+      checked: false
     }])
   }
 
@@ -28,12 +31,20 @@ function App() {
       setBusinessActive(!businessActive)
       setPersonalActive(false)
 
+      // временно
+      setCategory('business')
+
     } else {
       setPersonalActive(!personalActive)
       setBusinessActive(false)
+
+      // временно
+      setCategory('personal')
     }
 
   }
+
+
   return (
     <div className="App">
       <Greetings />
@@ -45,10 +56,8 @@ function App() {
       />
       <TodoList
         tasks_list={tasks_list}
-        businessActive={businessActive}
-        personalActive={personalActive}
+        setTasks_list={setTasks_list}
       />
-      {/* {tasks_list.map(task => <TodoList task={task}/>)} */}
     </div>
   );
 }

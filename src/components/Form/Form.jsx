@@ -7,21 +7,21 @@ const Form = ({addTask, businessActive, personalActive, handleCategoryClick}) =>
     
     const handleSubmit = (event) => {
         event.preventDefault();
-        addTask(task)
+        
 
-        setTask("")
+        if(task.trim().length < 3){
+            alert('Мало символов!')
+        } else {
+            addTask(task)
+            setTask("")
+        }
         
     }
 
     const handleTaskChange = (event) => {
    
-        if(event.target.value !== ''){
-            setTask(event.target.value)
-            // console.log('+')
-        } else {
-            alert('Напишите задачу!!!')
-            // console.log('-')
-        }
+        setTask(event.target.value)
+        
     }
 
     return (

@@ -12,9 +12,11 @@
                 width: 100%;
                 padding: 20px;
                 display: flex;
+                align-items: center;
                 justify-content: space-between;
                 border-radius: 28px;
                 margin: 20px 0;
+                font-size: 20px;
     
                 .taskName-container {
                     display: flex;
@@ -73,4 +75,17 @@
     
         }
     }
+    &__tasks_item_info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    &__tasks_item_text {
+        width: 350px;
+        overflow: hidden;
+
+        &_completed {
+            text-decoration: line-through;
+        }
+      }
 }

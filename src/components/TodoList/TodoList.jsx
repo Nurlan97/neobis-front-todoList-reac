@@ -1,47 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import './TodoList.scss';
+import DeleteTask from '../DeleteTask'
+import ToggleTaskCompletion from '../EditButton/EditButton';
+import TodoItem from '../TodoItem/TodoItem';
 
-const TodoList = ({ tasks_list, businessActive, personalActive }) => {
-  let business
-  let personal
+const TodoList = ({ tasks_list, setTasks_list }) => {
+  // const [editedTask, setEditedTask] = useState("");
 
-  const [category, setCategory] = useState('')
-  // const [businessCategory, setBusinessCategory] = useState('')
-  // const [personalCategory, setPersonalCategory] = useState('')
+  // const handleTaskChange = (event) => {
+  //   setEditedTask(event.target.textContent);
+  // };
 
-
-  useEffect(() => {
-    if(businessActive) {
-      setCategory('category__item-business')
-    } else if (personalActive) {
-      setCategory('category__item-personal')
-    } else {
-      setCategory('');
-    }
-  }, [businessActive, personalActive])
-
-  // useEffect(() => {
-  //   if (businessActive) {
-  //     setBusinessCategory('category__item-business')
-  //     console.log(businessActive)
-  //   } else {
-  //     setPersonalCategory('category__item-personal')
-  //   } 
-  // }, [businessCategory, personalCategory])
-
-
+  // console.log(tasks_list)
   return (
     <div className='todoList'>
       <h2 className="todoList__title">TODO LIST</h2>
       <ul className="todoList__tasks_list">
         {tasks_list.map((task, index) => {
           return (
-            <li key={index}>
-              <div className={category}></div>
-              {/* <div className={businessActive ? businessCategory : personalCategory}></div> */}
-              {task.task}
-
-            </li>
+            <TodoItem key={index} task={task} index={index} tasks_list={tasks_list} setTasks_list={setTasks_list}/>
           )
         })}
 

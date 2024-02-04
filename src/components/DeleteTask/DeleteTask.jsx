@@ -1,5 +1,6 @@
 import React from 'react'
 import './DeleteTask.scss';
+import { handleGetFromLocalStorage, handleSetToLocalStorage } from '../../utils/localStorage';
 
 const DeleteTask = ({ taskId, tasks_list, setTasks_list }) => {
   // console.log(tasks_list)
@@ -8,6 +9,7 @@ const DeleteTask = ({ taskId, tasks_list, setTasks_list }) => {
   const deleteTask = () => {
     const updatedTasksList = tasks_list.filter(task => task.id !== taskId)
     setTasks_list(updatedTasksList)
+    handleSetToLocalStorage(updatedTasksList)
   }
 
   return (

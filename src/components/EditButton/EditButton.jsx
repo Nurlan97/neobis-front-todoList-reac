@@ -10,7 +10,7 @@ const EditButton = ({setEdit, edit}) => {
   
 
   return (
-    <button className='todoList__edit_btn' onClick={handleEditBtnClick}>
+    <button className='todoList__tasks_edit_btn' onClick={handleEditBtnClick}>
         {
           !edit ? 'Edit' : 'Save'
         }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Form.scss';
 import Category from '../Category';
+// import { handleSetToLocalStorage } from '../../utils/localStorage';
 
 const Form = ({addTask, businessActive, personalActive, handleCategoryClick}) => {
     const [task, setTask] = useState('');

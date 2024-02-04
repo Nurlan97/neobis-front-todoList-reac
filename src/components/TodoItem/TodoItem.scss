@@ -1,7 +1,32 @@
-.todoList__tasks_item {
+.todoList__tasks {
 
-    &_info{
+    &_item {
 
+        &_info {
+
+            cursor: pointer;
+        }
+
+        &_input {
+            border: none;
+            width: 350px;
+            font-size: 20px;
+        }
+    }
+
+    &_btns {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &_edit_btn {
+        padding: 10px;
+        font-size: 15px;
+        border-radius: 5px;
+        background: rgba(216, 48, 146, 255);
+        color: #ffffff;
+        border: none;
         cursor: pointer;
     }
 }

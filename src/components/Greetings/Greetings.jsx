@@ -3,7 +3,7 @@ import './Greetings.scss';
 
 const Greetings = () => {
   
-  const [userName, setUserName] = useState(localStorage.getItem('userName'))
+  const [userName, setUserName] = useState(localStorage.getItem('userName') || '');
 
   useEffect(() => {
     localStorage.setItem('userName', userName)

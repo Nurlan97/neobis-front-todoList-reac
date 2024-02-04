@@ -4,24 +4,31 @@ import Greetings from './components/Greetings';
 import TodoList from './components/TodoList';
 import './index.css';
 import { v4 as uuidv4 } from 'uuid';
+import { handleGetFromLocalStorage, handleSetToLocalStorage } from './utils/localStorage';
+
 
 
 function App() {
-
-  const [tasks_list, setTasks_list] = useState([]);
+  const getFromLocalStorage = handleGetFromLocalStorage()
+  const [tasks_list, setTasks_list] = useState(getFromLocalStorage || []);
   const [businessActive, setBusinessActive] = useState(false);
   const [personalActive, setPersonalActive] = useState(false);
   const [category, setCategory] = useState('')
-  
-  const addTask = task => {
-    setTasks_list([...tasks_list, {
+
+  const addTask = (task) => {
+    const newTask = {
       id: uuidv4(),
       task,
       category,
       completed: false,
       isEditing: false,
       checked: false
-    }])
+    };
+    setTasks_list((prev) => {
+      const updatedTasksList = [...prev, newTask]
+      handleSetToLocalStorage(updatedTasksList)
+      return updatedTasksList
+    })
   }
 
 

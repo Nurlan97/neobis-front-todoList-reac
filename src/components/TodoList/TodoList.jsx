@@ -1,17 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './TodoList.scss';
-import DeleteTask from '../DeleteTask'
-import ToggleTaskCompletion from '../EditButton/EditButton';
 import TodoItem from '../TodoItem/TodoItem';
 
 const TodoList = ({ tasks_list, setTasks_list }) => {
-  // const [editedTask, setEditedTask] = useState("");
-
-  // const handleTaskChange = (event) => {
-  //   setEditedTask(event.target.textContent);
-  // };
-
-  // console.log(tasks_list)
+  
   return (
     <div className='todoList'>
       <h2 className="todoList__title">TODO LIST</h2>
